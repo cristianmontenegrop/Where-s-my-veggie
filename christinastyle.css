@@ -1,0 +1,92 @@
+body {
+    background-color: #d8ebb5;
+    font-family: 'Quicksand';
+    font-size: 15px;
+}
+
+.nav-wrapper {
+    background-color: #2b580c;
+}
+
+.navbar {
+    margin: 20px;
+}
+
+.cherry-bowl {
+    height: 175px;
+    width: 225px;
+    float: left;
+    margin: 20px;
+}
+
+.card1 {
+    padding: 20px;
+    width: 100%;
+}
+
+.cards-image {
+float: "left";
+}
+
+.brand-logo {
+    margin-left: 10px;
+}
+
+.page-footer1 {
+    margin: 20px;
+    background-color: #2b580c;
+
+}
+
+.container {
+    background-color: #2b580c;
+}
+
+#copyright {
+    color: white;
+}
+
+.wrapper {
+    margin: 20px;
+}
+
+.contactcontainer {
+    border: 20px;
+    border-color: #d9bf77;
+}
+
+.vendor-list {
+    margin: 20px;
+}
+
+.card-image {
+    width: 100px;
+    height: 150px;
+}
+
+.card2 {
+    background-color: #d9bf77;
+}
+
+#opener {
+    margin-left: 10px;
+}
+
+.blue-box {
+    background-color: #639a67;
+}
+
+#card-title {
+    color: white;
+}
+
+.market-list {
+    margin: 20px;
+}
+
+#market-image {
+    height: 140px;
+    width: 741px;
+}
+
+
