@@ -14,12 +14,12 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Where's My Veggie</a>
+            <a href="./index.html" class="brand-logo"><img id="logo-img" src="assets/Logo.png"></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="vendors.html">Vendors</a></li>
-                <li><a href="markets.html">Markets</a></li>
-                <li><a href="about-us.html">About us</a></li>
-                <li><a href="contact-us.html">Contact us</a></li>
+                <li><a id="nav-mobile-items" href="vendors.html">Vendors</a></li>
+                <li><a id="nav-mobile-items" href="markets.html">Markets</a></li>
+                <li><a id="nav-mobile-items" href="about-us.html">About us</a></li>
+                <li><a id="nav-mobile-items" href="contact-us.html">Contact us</a></li>
             </ul>
         </div>
     </nav>
@@ -28,15 +28,25 @@
     </div>
     <div class="section white">
         <div class="row container">
-            <h2 class="header">Parallax</h2>
+            <div class="col s6">
+                <h2 class=" header">Welcome!</h2>
+                <p class="text-on-left grey-text text-darken-3 lighten-3">We're here to help your veggies!, they must
+                    find their way to your table. Find Local vendors, farmer's markets, vendor's product list, and set
+                    up your favourite
+                    ingredients so we can guide you through finding your whole list in one shop to your market! </p>
+                <p class="text-on-left grey-text text-darken-3 lighten-3">Comingup next... Pre-order your veggies from
+                    here!, your
+                    local vendor will have them ready to pick up when you choose to!</p>
+            </div>
+            <img class="col s5" id="home-map" src="https://via.placeholder.com/500/">
+
+
+            <!-- <h2 class="header">Parallax</h2>
             <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in
                 this case, is moved at a different speed than the foreground content while scrolling.</p>
             <h2 class="header">Parallax</h2>
             <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in
-                this case, is moved at a different speed than the foreground content while scrolling.</p>
-            <h2 class="header">Parallax</h2>
-            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in
-                this case, is moved at a different speed than the foreground content while scrolling.</p>
+                this case, is moved at a different speed than the foreground content while scrolling.</p> -->
         </div>
     </div>
 
@@ -46,16 +56,19 @@
 
     <div class="section white">
         <div class="row container">
-            <h2 class="header">Parallax</h2>
-            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in
-                this case, is moved at a different speed than the foreground content while scrolling.</p>
-            <h2 class="header">Parallax</h2>
-            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in
-                this case, is moved at a different speed than the foreground content while scrolling.</p>
-            <h2 class="header">Parallax</h2>
-            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in
-                this case, is moved at a different speed than the foreground content while scrolling.</p>
+            <img class="col s5" id="home-weather" src="https://via.placeholder.com/500/">
+            <div class="coming-weather-txt col s7">
+                <!-- <h2 class="header">What else?..</h2>
+                <p class="grey-text text-darken-3 lighten-3"> Rate your Vendor!!! he needs your feedback as much as you!
+                </p> -->
+
+                <h2 class="coming-weather-txt header">Coming Weather</h2>
+                <p class="coming-weather-txt grey-text text-darken-3 lighten-3">Check out the coming weather in the
+                    area.</p>
+            </div>
+
         </div>
+
     </div>
     <!-- <div class="parallax-container parallax-container-3">
         <div class="parallax"><img src="./assets/mushrooms-1623893_1920.jpg"></div>
@@ -86,16 +99,15 @@
                     <div class="row">
                         <div class="col l4 s12">
                             <h5>Help Our Veggies Grow</h5>
-                            <p class="grey-text text-darken-2">We hope you have enjoyed using Materialize and if you
-                                feel like it has helped you out and want to support the team you can help us by donating
-                                or backing us on Patreon. Any amount would help support and continue development on this
-                                project and is greatly appreciated.</p>
+                            <p class="grey-text ">We hope you enjoyed using this platform as much as we
+                                enjoyed your visit!, your support is much needed and appreciated, our mission is to help
+                                vendors grow and you to find healthier nourishing food.</p>
                             <a class="btn waves-effect waves-light " href="/support-us.html">Support Us</a>
 
                         </div>
                         <div class="col l4 s12">
-                            <h5>Join the Discussion</h5>
-                            <p class="grey-text text-darken-2">We have a Gitter chat room set up where you can talk
+                            <h5>Any comments?</h5>
+                            <p class="grey-text ">We have a Gitter chat room set up where you can talk
                                 directly with us. Come in and discuss new features, future goals, general problems or
                                 questions, or anything else you can think of.</p>
                             <a class="btn waves-effect waves-light " target="_blank"
@@ -108,7 +120,7 @@
                                 allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
                             <br>
                             <a href="https://twitter.com/MaterializeCSS" class="twitter-follow-button"
-                                data-show-count="true" data-size="large" data-dnt="true">Follow @MaterializeCSS</a>
+                                data-show-count="true" data-size="large" data-dnt="true">Follow @Wheresmyveggie</a>
                         </div>
                     </div>
 
@@ -116,40 +128,47 @@
                         <div class="col s12">
                             <h5>Patreon Sponsors</h5>
                         </div>
-                        <!-- <div class="col s12">
-                            <div class="patreon-footer-ad">
-                                <a href="https://kredittkrt.no/" alt="kredittkort" target="_blank" rel="noopener">
-                                    <img src="https://kredittkrt.no/wp-content/uploads/2016/02/kredittkrt-logo.png"
-                                        alt="kredittkort">
-                                </a>
+                        <div class="col s12">
+                            <div class="row">
+                                <div class=" col s2 patreon-footer-ad">
+                                    <a href="https://kredittkrt.no/" alt="kredittkort" target="_blank" rel="noopener">
+                                        <img class="footer-sponsors"
+                                            src="https://kredittkrt.no/wp-content/uploads/2016/02/kredittkrt-logo.png"
+                                            alt="kredittkort">
+                                    </a>
+                                </div>
+                                <div class=" col s2 patreon-footer-ad ">
+                                    <a href="https://www.santabarbarachocolate.com/" alt="Santa Barbara Chocolate"
+                                        target="_blank" rel="noopener">
+                                        <img class="footer-sponsors"
+                                            src="https://i.postimg.cc/j5cJ5Y99/SBChocolate-Logo-With-Alpha-768x768v4.png"
+                                            alt="Santa Barbara Chocolate">
+                                    </a>
+                                </div>
+                                <div class=" col s2 patreon-footer-ad">
+                                    <a href="https://netqualified.com/"
+                                        alt="Notification widget for website engagement and conversion" target="_blank"
+                                        rel="noopener">
+                                        <img class="footer-sponsors"
+                                            src="https://netqualified.com/uploads/logo/008c4b17d2f7dffb207c95d34ab72eac.png"
+                                            alt="Notification widget for website engagement and conversion">
+                                    </a>
+                                </div>
+                                <div class=" col s2 patreon-footer-ad">
+                                    <a href="https://monovm.com/" alt="VPS Hosting" target="_blank" rel="noopener">
+                                        <img class="footer-sponsors" src="https://i.postimg.cc/bvhm6D5J/monovm-logo.jpg"
+                                            alt="VPS Hosting">
+                                    </a>
+                                </div>
+                                <div class=" col s2 patreon-footer-ad">
+                                    <a href="https://clay.global/" target="_blank" rel="noopener">
+                                        <img class="footer-sponsors"
+                                            src="https://i.postimg.cc/8knGJCYr/clay-logo-transp.png"
+                                            alt="UI UX Design Agency">
+                                    </a>
+                                </div>
                             </div>
-                            <div class="patreon-footer-ad footer-sponsors">
-                                <a href="https://www.santabarbarachocolate.com/" alt="Santa Barbara Chocolate"
-                                    target="_blank" rel="noopener">
-                                    <img src="https://i.postimg.cc/j5cJ5Y99/SBChocolate-Logo-With-Alpha-768x768v4.png"
-                                        alt="Santa Barbara Chocolate">
-                                </a>
-                            </div>
-                            <div class="patreon-footer-ad">
-                                <a href="https://netqualified.com/"
-                                    alt="Notification widget for website engagement and conversion" target="_blank"
-                                    rel="noopener">
-                                    <img src="https://netqualified.com/uploads/logo/008c4b17d2f7dffb207c95d34ab72eac.png"
-                                        alt="Notification widget for website engagement and conversion">
-                                </a>
-                            </div>
-                            <div class="patreon-footer-ad">
-                                <a href="https://monovm.com/" alt="VPS Hosting" target="_blank" rel="noopener">
-                                    <img src="https://i.postimg.cc/bvhm6D5J/monovm-logo.jpg" alt="VPS Hosting">
-                                </a>
-                            </div>
-                            <div class="patreon-footer-ad">
-                                <a href="https://clay.global/" target="_blank" rel="noopener">
-                                    <img src="https://i.postimg.cc/8knGJCYr/clay-logo-transp.png"
-                                        alt="UI UX Design Agency">
-                                </a>
-                            </div>
-                        </div> -->
+                        </div>
                     </div>
 
                     <div class="footer-copyright">

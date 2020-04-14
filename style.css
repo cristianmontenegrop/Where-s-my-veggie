@@ -3,8 +3,52 @@ body {
     background-color: #2b580c;
 }
 
+p {
+    font-size: larger;
+}
+
+.brand-logo {
+    margin-left: 0.8rem;
+}
+
+#logo-img {
+
+    margin-top: 0.3rem;
+    max-height: 3.5rem;
+    max-width: auto;
+}
+
+#nav-mobile-items {
+
+    font-size: large;
+}
+
 .nav-wrapper {
     background-color: #2b580c;
+}
+
+#home-map {
+    margin-top: 2rem;
+    float: right;
+    max-width: 500px;
+    max-height: auto;
+
+    margin-right: 3rem;
+}
+
+#home-weather {
+    margin-top: 2rem;
+    float: left;
+    max-width: 500px;
+    max-height: auto;
+}
+
+.coming-weather-txt {
+    float: right;
+}
+
+.text-on-left {
+    text-align: left;
 }
 
 .page-footer {
@@ -28,7 +72,7 @@ body {
 } */
 
 .footer-sponsors {
-    width: 10%;
-    height: auto;
+    max-width: 150px;
+    max-height: auto;
 
 }
