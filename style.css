@@ -38,6 +38,10 @@ float: "left";
 
 }
 
+.footer-container {
+    background-color: #2b580c
+}
+
 .container {
     background-color: #2b580c;
 }
@@ -70,10 +74,12 @@ float: "left";
 
 #opener {
     margin-left: 10px;
+    color: white;
 }
 
 .blue-box {
-    background-color: #639a67;
+    background-color: #2b580c;
+    color: white;
 }
 
 #card-title {
@@ -89,4 +95,77 @@ float: "left";
     width: 741px;
 }
 
+p {
+    font-size: larger;
+}
+
+.brand-logo {
+    margin-left: 0.8rem;
+}
+
+#logo-img {
+
+    margin-top: 0.3rem;
+    max-height: 3.5rem;
+    max-width: auto;
+}
+
+#nav-mobile-items {
+
+    font-size: large;
+}
+
+.nav-wrapper {
+    background-color: #2b580c;
+}
+
+#home-map {
+    margin-top: 2rem;
+    float: right;
+    max-width: 500px;
+    max-height: auto;
+
+    margin-right: 3rem;
+}
+
+#home-weather {
+    margin-top: 2rem;
+    float: left;
+    max-width: 500px;
+    max-height: auto;
+}
+
+.coming-weather-txt {
+    float: right;
+}
+
+.text-on-left {
+    text-align: left;
+}
+
+.page-footer {
+    background-color: #2b580c;
+}
+
+.btn {
+    background-color: #639a67;
+}
+
+.parallax-container-1 {
+    height: 500px;
+}
+
+.parallax-container-2 {
+    height: 400px;
+}
+
+/* .parallax-container-3 {
+    height: 500px;
+} */
+
+.footer-sponsors {
+    max-width: 150px;
+    max-height: auto;
+
+}
 
