@@ -58,7 +58,7 @@ function getResults(zip) {
 }
 //iterate through the JSON result object.
 function searchResultsHandler(searchResults) {
-    // console.log(searchResults)
+    console.log(searchResults)
     for (var key in searchResults) {
         console.log(searchResults.results[0])
         // alert(key);
