@@ -162,9 +162,10 @@ p {
     height: 400px;
 }
 
-/* .parallax-container-3 {
-    height: 500px;
-} */
+.footer-sponsors {
+    width: 100px;
+    height: 100px;
+}
 
 .footer-sponsors {
     width: 10%;
