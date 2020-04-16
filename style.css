@@ -86,6 +86,7 @@ float: "left";
     color: white;
 }
 
+
 .market-list {
     margin: 20px;
 }
@@ -167,5 +168,9 @@ p {
     max-width: 150px;
     max-height: auto;
 
+}
+
+.container2 {
+    background-color: #2b580c;
 }
 
