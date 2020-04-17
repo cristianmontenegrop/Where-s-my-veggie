@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+</head>
 
 <body>
     <nav>
@@ -24,28 +24,38 @@
         </div>
     </nav>
     <div class="parallax-container parallax-container-1">
-        <div class="parallax"><img src="./assets/11apples-1841132_1280.jpg"></div>
+        <div class="parallax"><img src="assets/fresh-peppers-619132_1920.jpg"></div>
     </div>
     <div class="section white">
         <div class="row container">
             <div class="col s6">
-                <h2 id="card-title">Welcome!</h2>
-                <p id="card-title">We're here to help you find local veggies, and get them on the table. Navigate through our centralized site to find local farmers markets, vendors, and their products.</p>
-                <p id="card-title">Coming soon... Pre-order your veggies from our site, local vendors will have them ready for a convenient pick-up!</p>
+                <h2 class="header" id="card-title">Contact Us</h2>
+                <div class="container">
+                    <form action="action_page.php">
+                  
+                      <label for="name">Name</label>
+                      <input type="text" id="name" name="firstname" placeholder="Name">
+                  
+                      <label for="email">Email</label>
+                      <input type="text" id="email" name="email" placeholder="Email">
+                  
+                      <label for="message">Message</label>
+                      <select id="message" name="message">
+                      </select>
+                  
+                      <label for="subject"></label>
+                      <textarea id="subject" name="subject" placeholder="Write something..." style="height:200px"></textarea>
+                  
+                      <input type="submit" value="Submit">
+                  
+                    </form>
+                  </div>
             </div>
-            <img class="col s5" id="home-map" src="assets/vegetable-2485063_1920.jpg">
-            <iframe
-                width="500"
-                height="500"
-                frameborder="0" style="border:0"
-                src="https://www.google.com/maps/embed/v1/search?key=AIzaSyC7twezMXAWF0x0GwoUYIhj-DvcriZ41os
-                    &q=farmers+markets+in+Seattle&zoom=11" allowfullscreen>
-                </iframe>
-         </div>
+            <img class="col s5" id="home-map" src="assets/bread-821503_1920.jpg">
+        </div>
     </div>
 </div>
-
-
+</div>
 
         <div class="footer2">
             <footer class="page-footer docs-footer">
