@@ -6,6 +6,38 @@ body {
     font-size: 15px;
 }
 
+.zip-code-input-button {
+
+    margin-top: 2.6rem;
+
+}
+
+.markets-initial-text {
+    padding-left: 1.3rem;
+}
+
+
+
+p {
+    font-size: larger;
+}
+
+.brand-logo {
+    margin-left: 0.8rem;
+}
+
+#logo-img {
+
+    margin-top: 0.3rem;
+    max-height: 3.5rem;
+    max-width: auto;
+}
+
+#nav-mobile-items {
+
+    font-size: large;
+}
+
 .nav-wrapper {
     background-color: #2b580c;
 }
@@ -27,7 +59,8 @@ body {
 }
 
 .cards-image {
-float: "left";
+    float: "left";
+
 }
 
 .brand-logo {
@@ -168,8 +201,8 @@ p {
 }
 
 .footer-sponsors {
-    width: 10%;
-    height: auto;
+    max-width: 150px;
+    max-height: auto;
 
     max-width: 150px;
     max-height: auto;

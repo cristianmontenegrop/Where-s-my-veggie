@@ -4,19 +4,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-var searchZip = "98103";
+$("#zip-code-input-button").on("click", getMapsCenter);
 
-$("#search-address-button").on("click", "getCoordinatesFromAddress");
+$("#zip-code-input").bind("change paste keyup", function () {
+    if (event.keyCode === 13) {
+        getMapsCenter(searchZip = this);
+        console.log(searchZip);
+    }
+});
+var searchZip = "";
 
-async function getMapsCenter() {
+function getMapsCenter() {
+    searchZip = $("#zip-code-input")
+        .val()
+        .trim()
     // Location IQ gets the input of an address, and returns Coordinates
     // coordinates get dumped on addMarket
-
+    console.log(searchZip);
     $.ajax({
         type: "GET",
         url: "https://us1.locationiq.com/v1/search.php?key=3968761b6c52cf&postalcode=" + searchZip + "&format=json"
     }).then(function (addressResponse) {
         addMarkerCenter(addressResponse[0].lat, addressResponse[0].lon);
+        getUsdaResults();
     });
 };
 
@@ -60,6 +70,7 @@ function searchResultsHandler(usdaResponse) {
             dataType: 'jsonp',
         }).then(function (detail) {
             var usdaMarketAddress = detail.marketdetails.Address;
+            MarketResultsIntoHtml(detail, marketName)
             $.ajax({
                 type: "GET",
                 url: "https://us1.locationiq.com/v1/search.php?key=3968761b6c52cf&q=" + usdaMarketAddress + "&format=json"
@@ -73,8 +84,14 @@ function searchResultsHandler(usdaResponse) {
 
         if (ix == 4) {
             clearInterval(timer);
-        };
+        }
     }, 550);
+};
+
+function MarketResultsIntoHtml(marketDetail, marketName) {
+    console.log(marketDetail);
+    var marketArticle = $("<div class='col s12 m7'><h5 class='header header-market'>" + marketName + "</h5><div class='card horizontal'><div class='card-image'><img src='assets/vegetables.jpg'></div><div class='card-stacked'><div class='card-content'><p>Address: " + marketDetail.marketdetails.Address + "</p><p>Schedule: " + marketDetail.marketdetails.Schedule.split(';') + "</p><p>Products: " + marketDetail.marketdetails.Products + "</p></div></div></div></div>");
+    $(".market-list").append(marketArticle);
 };
 
 function addMarkerCenter(lat, lng) {
@@ -87,8 +104,4 @@ function addMarker(lat, lng, marketName, ix) {
     console.log(lat);
     console.log(lng);
     console.log(marketName);
-
 };
-
-getMapsCenter();
-getUsdaResults();
