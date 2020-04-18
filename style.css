@@ -16,7 +16,11 @@ body {
     padding-left: 1.3rem;
 }
 
-
+#map {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+}
 
 p {
     font-size: larger;
@@ -196,16 +200,15 @@ p {
 }
 
 .footer-sponsors {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: auto;
 }
 
 .footer-sponsors {
-    max-width: 150px;
     max-height: auto;
+    max-width: 150px;
 
-    max-width: 150px;
-    max-height: auto;
+
 }
 
 .container2 {
