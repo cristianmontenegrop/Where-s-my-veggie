@@ -34,10 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
 // }
 // );
 
-
-
-
-
 // Pseudocode: 
 // get the API from location IQ 
 // The response of Location IQ API gets put into the USDA API through function getUSDAResultsZip or getUSDAResultsAddress
@@ -46,144 +42,209 @@ document.addEventListener('DOMContentLoaded', function () {
 // The Ajax call gets looped through the whole list of results to get the detail from the whole list
 // those details get appended into Markets page. 
 
+var searchZip = "98103";
 
 $("#search-address-button").on("click", "getCoordinatesFromAddress");
 
-function convertUsdaResultsZip() {
+function getMapsCenter() {
     // Location IQ gets the input of an address, and returns Coordinates
-    // coordinates get dumped on thegetUsdaResults
-    var searchZip = "98103";
+    // coordinates get dumped on addMarket
+
     $.ajax({
         type: "GET",
         url: "https://us1.locationiq.com/v1/search.php?key=3968761b6c52cf&postalcode=" + searchZip + "&format=json"
     }).then(function (addressResponse) {
         console.log(addressResponse)
         console.log(addressResponse[0].lat, addressResponse[0].lon)
-
-    });
-
-};
-// $("#search-address-button").on("click", "getCoordinatesFromAddress");
-function convertUsdaResultsAddress() {
-    // Location IQ gets the input of an address, and returns Coordinates
-    // coordinates get dumped on thegetUsdaResults
-    // GET https://us1.locationiq.com/v1/search.php?key=3968761b6c52cf&q=searchAddress&format=json
-    var country = "USA";
-    var city = "Seattle";
-    var zip = 98102;
-    var address = "1202 e thomas st";
-    $.ajax({
-        type: "GET",
-        url: "https://us1.locationiq.com/v1/search.php?key=3968761b6c52cf&street=" + address + "&city=" + city + "&postalcode=" + zip + "&format=json"
-    }).then(function (addressResponse) {
-        // console.log(addressResponse)
-        // console.log(addressResponse[0].lat, addressResponse[0].lon)
-        getUsdaResults(addressResponse[0].lat, addressResponse[0].lon)
+        addMarket(addressResponse[0].lat, addressResponse[0].lon);
     });
 };
-
-
-
 
 // Function that runs a search on nearby markets based on Coordinates
-function getUsdaResults(lat, lng) {
-    // console.log(lat, lng);
+function getUsdaResults() {
 
     $.ajax({
         type: "GET",
         contentType: "application/json; charset=utf-8",
         // submit a get request to the restful service zipSearch or locSearch.
-        // url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip,
+        url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + searchZip,
         // or
-        url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + lat + "&lng=" + lng,
+        // url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + lat + "&lng=" + lng,
         dataType: 'jsonp',
-        jsonpCallback: 'searchResultsHandler'
+        // jsonpCallback: 'searchResultsHandler'
     }).then(searchResultsHandler);
 }
 
-//iterate through the JSON result object.
-function searchResultsHandler(searchResults) {
+function searchResultsHandler(usdaResponse) {
 
-    var detailListCoordinates = [];
-    var detailList = [{}];
-    var detail;
-    var address;
-    var i = 0;
-    var addresses = [];
+    console.log(usdaResponse);
 
-    // console.log(detailList);
-    // console.log(addresses);
-    // console.log(addresses["0"]);
-    console.log(searchResults)
-    console.log(detailList)
-    console.log(detailList[1])
+    var results = usdaResponse.results;
+    var myIdArr = [];
+    var marketNameArr = [];
+    var ix = 0;
 
-    $(searchResults.results).each(function () {
+    for (var i = 0; i < results.length; i++) {
 
-        address;
-        addresses;
-        detailList;
-        detail;
-        i;
+        var item = results[i]
+        myIdArr.push(item.id);
+        marketNameArr.push(item.marketname.substring(4));
+    }
 
-        var id = $(this)[0].id;
-        var marketName = $(this)[0].marketname;
-        var cleanMarketName = marketName.slice(4, 100);
+    var timer = setInterval(function () {
+        ix;
+        var myIdUsda = myIdArr[ix]
+        var marketName = marketNameArr[ix];
 
-        // Call to get the details of the markets
         $.ajax({
             type: "GET",
             contentType: "application/json; charset=utf-8",
-            // submit a get request to the restful service mktDetail.
-            url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id,
+            url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + myIdUsda,
             dataType: 'jsonp',
-            // jsonpCallback: 'detailResultHandler'
         }).then(function (detail) {
-
-
-            // console.log(detail);
-            detail = [detail.marketdetails];
-            // console.log(detail[0].Address);
-            // var count2 = detail.push(cleanMarketName);
-            // var detailObj = Object.create(detail);
-            i;
-
-            // console.log(i)
-            detailList[i] = detail;
-            i = i + 1;
-
-
-            // address = detail[1].Address;
-            // addresses.push(address);
+            var usdaMarketAddress = detail.marketdetails.Address;
+            $.ajax({
+                type: "GET",
+                url: "https://us1.locationiq.com/v1/search.php?key=3968761b6c52cf&q=" + usdaMarketAddress + "&format=json"
+            }).then(function (addressResponse) {
+                var lat = addressResponse[0].lat
+                var lng = addressResponse[0].lon
+                addMarker(lat, lng, marketName, ix)
+                ix = ix + 1
+            });
         });
-    });
-    // getMarketCoordinates(addresses);
 
+        if (ix == 4) {
+            clearInterval(timer);
+        };
+    }, 550);
+};
 
+function addMarker(lat, lng, marketName, ix) {
 
-    // for (var key in searchResults) {
-    //     // console.log(searchResults.results[0])
-    //     // alert(key);
-    //     var id = searchResults.results[0].id;
-    //     // getUsdaDetails(id)
-    //     var results = searchResults[key];
-    // for (var i = 0; i < results.length; i++) {
-    //     var result = results[i];
-    //     // console.log(result.id);
-    //     // getUsdaDetails(result.id)
-    //     $.ajax({
-    //         type: "GET",
-    //         contentType: "application/json; charset=utf-8",
-    //         // submit a get request to the restful service mktDetail.
-    //         url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + result.id,
-    //         dataType: 'jsonp',
-    //         jsonpCallback: 'detailResultHandler'
-    //     }).then(function detailResultHandler(detailResult) {
-    //         console.log(detailResult)
-    //     });
-    // }
-    // }
+    console.log(lat);
+    console.log(lng);
+    console.log(marketName);
+    console.log(ix);
 }
+
+
+
+getUsdaResults();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $("#search-address-button").on("click", "getCoordinatesFromAddress");
+// function convertUsdaResultsAddress() {
+// Location IQ gets the input of an address, and returns Coordinates
+// coordinates get dumped on thegetUsdaResults
+// GET https://us1.locationiq.com/v1/search.php?key=3968761b6c52cf&q=searchAddress&format=json
+// var country = "USA";
+// var city = "Seattle";
+// var zip = 98102;
+// var address = "1202 e thomas st";
+// $.ajax({
+//     type: "GET",
+//     url: "https://us1.locationiq.com/v1/search.php?key=3968761b6c52cf&street=" + address + "&city=" + city + "&postalcode=" + zip + "&format=json"
+// }).then(function (addressResponse) {
+// console.log(addressResponse)
+// console.log(addressResponse[0].lat, addressResponse[0].lon)
+// getUsdaResults(addressResponse[0].lat, addressResponse[0].lon)
+// });
+// };
+
+
+//iterate through the JSON result object.
+// function searchResultsHandler(searchResults) {
+
+// var detailListCoordinates = [];
+// var detailList = [];
+// var detail;
+// var address;
+// var i = 0;
+
+
+
+// $(searchResults.results).each(function () {
+
+//     var id = $(this)[0].id;
+//     var marketName = $(this)[0].marketname;
+//     var cleanMarketName = marketName.slice(4, 100);
+
+// Call to get the details of the markets
+// $.ajax({
+//     type: "GET",
+//     contentType: "application/json; charset=utf-8",
+// submit a get request to the restful service mktDetail.
+// url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id,
+// dataType: 'jsonp',
+// jsonpCallback: 'detailResultHandler'
+// }).then(function (detail) {
+
+
+// console.log(detail);
+// detail = [detail.marketdetails];
+// console.log(detail[0].Address);
+// var count2 = detail.push(cleanMarketName);
+// var detailObj = Object.create(detail);
+// i;
+
+// console.log(i)
+// detailList[i] = detail;
+// i = i + 1;
+
+
+// address = detail[1].Address;
+// addresses.push(address);
+// });
+// });
+// getMarketCoordinates(addresses);
+
+
+
+// for (var key in searchResults) {
+//     // console.log(searchResults.results[0])
+//     // alert(key);
+//     var id = searchResults.results[0].id;
+//     // getUsdaDetails(id)
+//     var results = searchResults[key];
+// for (var i = 0; i < results.length; i++) {
+//     var result = results[i];
+//     // console.log(result.id);
+//     // getUsdaDetails(result.id)
+//     $.ajax({
+//         type: "GET",
+//         contentType: "application/json; charset=utf-8",
+//         // submit a get request to the restful service mktDetail.
+//         url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + result.id,
+//         dataType: 'jsonp',
+//         jsonpCallback: 'detailResultHandler'
+//     }).then(function detailResultHandler(detailResult) {
+//         console.log(detailResult)
+//     });
+// }
+// }
+// }
 
 function getMarketCoordinates(addresses) {
     console.log("WHAT!!")
@@ -234,6 +295,6 @@ function getUsdaDetails(id) {
 // console.log(results['GoogleLink']);
 // }
 // }
-convertUsdaResultsAddress();
+// convertUsdaResultsAddress();
 
 // console.log(detail);
