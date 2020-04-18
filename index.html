@@ -21,6 +21,7 @@
                     <li><a id="nav-mobile-items" href="markets.html">Markets</a></li>
                     <li><a id="nav-mobile-items" href="about.html">About</a></li>
                     <li><a id="nav-mobile-items" href="contact.html">Contact</a></li>
+                    <li><a id="nav-mobile-items" href="maps.html">Maps</a></li>
                 </ul>
             </div>
         </nav>
@@ -36,13 +37,17 @@
                 <p id="card-title">We're here to help you find local veggies, and get them on the table. Navigate through our centralized site to find local farmers markets, vendors, and their products.</p>
                 <p id="card-title">Coming soon... Pre-order your veggies from our site, local vendors will have them ready for a convenient pick-up!</p>
             </div>
-            <img class="col s5" id="home-map" src="assets/vegetable-2485063_1920.jpg">
+            <iframe
+                width="450"
+                height="550"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/search?key=AIzaSyC7twezMXAWF0x0GwoUYIhj-DvcriZ41os
+                    &q=farmers+markets+in+Seattle&zoom=11" allowfullscreen>
+                </iframe>
          </div>
     </div>
 </div>
-
-
-
+   
         <div class="footer2">
             <footer class="page-footer docs-footer">
               <div class="container2">
@@ -78,7 +83,6 @@
                                   <h5>Patreon Sponsors</h5>
                               </div>
 
-                    
                               <div class="col s12">
                                   <div class="row">
                                       <div class=" col s2 patreon-footer-ad">
@@ -122,7 +126,6 @@
                                   </div>
                               </div>
                           </div>
-              
         
                           <div class="footer-copyright">
                               © 2019-<noscript>2020</noscript>
@@ -136,6 +139,10 @@
               </div>
           </footer>
         </div>
+
+            <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwCl77BAAdSbQEH832zKMEOAQVYznq_8M&callback=initMap">
+                </script>
           <script src="https://code.jquery.com/jquery.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
           <script src="script.js"></script>

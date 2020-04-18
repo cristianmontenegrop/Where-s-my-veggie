@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map of Local Farmers Markets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <style>
+        #map {
+            height: 100%;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo"><img id="logo-img" src="assets/Logo.png"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a id="nav-mobile-items" href="vendors.html">Vendors</a></li>
+                <li><a id="nav-mobile-items" href="markets.html">Markets</a></li>
+                <li><a id="nav-mobile-items" href="about.html">About</a></li>
+                <li><a id="nav-mobile-items" href="contact.html">Contact</a></li>
+                <li><a id="nav-mobile-items" href="maps.html">Maps</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="map"></div>
+    <script>
+        var map = null
+        function initMap() {
+            var PikePlace = {lat: 47.6086, lng: -122.3406};
+            var University = {lat: 47.655967, lng: -122.313287};
+            var Ballard = {lat: 47.66662975, lng: -122.383050236922};
+            var QueenAnne = {lat: 47.60621, lng: -122.33207};
+            var Phinney = {lat: 47.678019, lng: -122.355429};
+            var Wallingford = {lat: 47.663938244898, lng: -122.333607959184};
+            map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 11, center: PikePlace});
+            var marker = new google.maps.Marker({position: PikePlace, map:map, title: "Pike Place Market"});
+            var marker = new google.maps.Marker({position: University, map:map, title: "University District Farmers Market"});
+            var marker = new google.maps.Marker({position: Ballard, map:map, title: "Ballard Farmers Market"});
+            var marker = new google.maps.Marker({position: QueenAnne, map:map, title: "Queen Anne Farmers Market"});
+            var marker = new google.maps.Marker({position: Phinney, map:map, title: "Phinney Farmers Market"});
+            var marker = new google.maps.Marker({position: Wallingford, map:map, title: "Wallingford Farmers Market"});
+            marker.setMap(map);
+            for (i=0; i<5; i++) {
+                    function addMarker(lat, lng, title) {
+                    var marker = new google.maps.Marker({position: {lat:lat, lng:lng}, map:map, title: marketName});
+                }
+        }
+    }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwCl77BAAdSbQEH832zKMEOAQVYznq_8M&callback=initMap">
+    </script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
