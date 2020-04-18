@@ -4,11 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-
-
-
-
-
 $("#zip-code-input-button").on("click", getMapsCenter);
 
 $("#zip-code-input").bind("change paste keyup", function () {
@@ -75,7 +70,7 @@ function searchResultsHandler(usdaResponse) {
             dataType: 'jsonp',
         }).then(function (detail) {
             var usdaMarketAddress = detail.marketdetails.Address;
-            MarketResultsIntoHtml(detail)
+            MarketResultsIntoHtml(detail, marketName)
             $.ajax({
                 type: "GET",
                 url: "https://us1.locationiq.com/v1/search.php?key=3968761b6c52cf&q=" + usdaMarketAddress + "&format=json"
@@ -89,14 +84,14 @@ function searchResultsHandler(usdaResponse) {
 
         if (ix == 4) {
             clearInterval(timer);
-        };
+        }
     }, 550);
 };
 
-function MarketResultsIntoHtml(marketDetail) {
+function MarketResultsIntoHtml(marketDetail, marketName) {
     console.log(marketDetail);
-
-
+    var marketArticle = $("<div class='col s12 m7'><h5 class='header header-market'>" + marketName + "</h5><div class='card horizontal'><div class='card-image'><img src='assets/vegetables.jpg'></div><div class='card-stacked'><div class='card-content'><p>Address: " + marketDetail.marketdetails.Address + "</p><p>Schedule: " + marketDetail.marketdetails.Schedule.split(';') + "</p><p>Products: " + marketDetail.marketdetails.Products + "</p></div></div></div></div>");
+    $(".market-list").append(marketArticle);
 };
 
 function addMarkerCenter(lat, lng) {
@@ -109,5 +104,4 @@ function addMarker(lat, lng, marketName, ix) {
     console.log(lat);
     console.log(lng);
     console.log(marketName);
-
 };
