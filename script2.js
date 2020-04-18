@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //      {"id":"22008839", "marketname":"1.9 Ballston Farmers Market"},
 //      {"id":"1002291", "marketname":"2.1 Four Mile Run Farmers & Artisans Market"},
 //      ...
-//      {"id":"1002181", "marketname":"4.4 Dupont Circle FRESHFARM Market"}
+//      {"id":"1002181", "marketname":"4.4 Dupont Circle FRESHFARM Market"} 
 //    ]
 // }
 // );

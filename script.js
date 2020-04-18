@@ -7,19 +7,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-var searchZip = "98103";
 
-$("#search-address-button").on("click", "getCoordinatesFromAddress");
 
-async function getMapsCenter() {
+$("#zip-code-input-button").on("click", getMapsCenter);
+
+$("#zip-code-input").bind("change paste keyup", function () {
+    if (event.keyCode === 13) {
+        getMapsCenter(searchZip = this);
+        console.log(searchZip);
+    }
+});
+var searchZip = "";
+
+function getMapsCenter() {
+    searchZip = $("#zip-code-input")
+        .val()
+        .trim()
     // Location IQ gets the input of an address, and returns Coordinates
     // coordinates get dumped on addMarket
-
+    console.log(searchZip);
     $.ajax({
         type: "GET",
         url: "https://us1.locationiq.com/v1/search.php?key=3968761b6c52cf&postalcode=" + searchZip + "&format=json"
     }).then(function (addressResponse) {
         addMarkerCenter(addressResponse[0].lat, addressResponse[0].lon);
+        getUsdaResults();
     });
 };
 
@@ -63,6 +75,7 @@ function searchResultsHandler(usdaResponse) {
             dataType: 'jsonp',
         }).then(function (detail) {
             var usdaMarketAddress = detail.marketdetails.Address;
+            MarketResultsIntoHtml(detail)
             $.ajax({
                 type: "GET",
                 url: "https://us1.locationiq.com/v1/search.php?key=3968761b6c52cf&q=" + usdaMarketAddress + "&format=json"
@@ -80,6 +93,12 @@ function searchResultsHandler(usdaResponse) {
     }, 550);
 };
 
+function MarketResultsIntoHtml(marketDetail) {
+    console.log(marketDetail);
+
+
+};
+
 function addMarkerCenter(lat, lng) {
     console.log(lat);
     console.log(lng);
@@ -92,6 +111,3 @@ function addMarker(lat, lng, marketName, ix) {
     console.log(marketName);
 
 };
-
-getMapsCenter();
-getUsdaResults();
