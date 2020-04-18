@@ -1,6 +1,6 @@
 # 07Project-Where-s-my-veggie.com
 
-PROJECT TITLE: VIRTUAL FARMERS MARKET
+PROJECT TITLE: Where's my Veggie?
 
 PROJECT DESCRIPTION:
 
