@@ -18,6 +18,7 @@ function getMapsCenter() {
     searchZip = $("#zip-code-input")
         .val()
         .trim()
+    $(".market-list").empty();
     // Location IQ gets the input of an address, and returns Coordinates
     // coordinates get dumped on addMarket
     console.log(searchZip);
@@ -92,6 +93,7 @@ function MarketResultsIntoHtml(marketDetail, marketName) {
     console.log(marketDetail);
     var marketArticle = $("<div class='col s12 m7'><h5 class='header header-market'>" + marketName + "</h5><div class='card horizontal'><div class='card-image'><img src='assets/vegetables.jpg'></div><div class='card-stacked'><div class='card-content'><p>Address: " + marketDetail.marketdetails.Address + "</p><p>Schedule: " + marketDetail.marketdetails.Schedule.split(';') + "</p><p>Products: " + marketDetail.marketdetails.Products + "</p></div></div></div></div>");
     $(".market-list").append(marketArticle);
+
 };
 
 function addMarkerCenter(lat, lng) {
