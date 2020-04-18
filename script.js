@@ -83,7 +83,7 @@ function searchResultsHandler(usdaResponse) {
             });
         });
 
-        if (ix == 4) {
+        if (ix == 9) {
             clearInterval(timer);
         }
     }, 550);
