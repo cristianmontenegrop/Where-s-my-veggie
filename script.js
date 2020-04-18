@@ -37,7 +37,7 @@ function getUsdaResults() {
     $.ajax({
         type: "GET",
         contentType: "application/json; charset=utf-8",
-        url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + searchZip,
+        url: "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + searchZip,
         dataType: 'jsonp',
         // jsonpCallback: 'searchResultsHandler'
     }).then(searchResultsHandler);
@@ -67,7 +67,7 @@ function searchResultsHandler(usdaResponse) {
         $.ajax({
             type: "GET",
             contentType: "application/json; charset=utf-8",
-            url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + myIdUsda,
+            url: "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + myIdUsda,
             dataType: 'jsonp',
         }).then(function (detail) {
             var usdaMarketAddress = detail.marketdetails.Address;
