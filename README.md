@@ -119,6 +119,9 @@ PRODUCER
 
 # LINKS:
 
+- Presentation power point: 
+    https://drive.google.com/file/d/1XKaKgeCLr5rFKuEyNMvh1cVD5w4I0mIC/view?usp=sharing
+
 - Website URL:
     https://cristianmontenegrop.github.io/07Project-Where-s-my-veggie.com/
 
