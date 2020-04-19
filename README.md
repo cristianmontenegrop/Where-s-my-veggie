@@ -6,6 +6,33 @@
 In a nutshell, this is a platform that connects produce vendors/producers with customers, simulating a phisical farmer's market.
 We accomplish this goal by helping the customer find the farmer's markets in her/his area, provide detailed information of those markets and the vendors that participate. To further guide them in the search of vendors we implement several maps (provided by google) across our site.
 
+# Project Mapping
+
+- The homepage will feature:
+    - Pages listed in Nav-bar
+        - About Us 
+        - Contact Us
+        - Markets 
+        - Vendors 
+        - Maps
+    - A map with the local markets in the Seattle area
+    - A brief description and instruction of the site's purpose
+    - Footer shared across all pages, featuring current sponsors, Support us and contact us sections, and links to subscribe as a follower in Instagram and other social media platforms
+
+- When the user clicks on About Us:
+    - A brief story of the concept behind the webpage will be presented
+
+- When the user clicks on Contact Us:
+    - An interactive contact form appears
+
+- When the user clicks on Markets: 
+    - They will be prompted for a Zip code that leads to a list (Obtained from USDA API) of found local markets, alongside the locations of the markets in a map (map pending)
+    - When they click on said market, a list of frequent vendors will appear (To be integrated).
+
+- When the user clicks on Vendors:
+    - They are presented with a full list of vendors, and when clicked on, each vendor will open up with a bio
+
+
 # Concept forming querys
 
 - What are all of the area's farmers markets? 
@@ -64,46 +91,45 @@ PRODUCER
 
 # ROUGH BREAKDOWN OF TASKS:
 
+- Andrew
 
-- The homepage will feature: (Cristian)
-    - Pages listed in Nav-bar
-        - About Us
-        - Contact Us
-        - Markets 
-        - Vendors 
-        - Maps (Andrew)
-    - A map with the local markets in the Seattle area (Andrew)
-    - A brief description and instruction of the site's purpose
-    - Footer shared across all pages, featuring current sponsors, Support us and contact us sections, and links to subscribe as a follower in Instagram and other social media platforms
+    - Google maps Integration in
+        - Home page
+        - Maps page
+    - Google maps API
+    - Maps Page
 
-- When the user clicks on About Us:
-    - A brief story of the concept behind the webpage will be presented (Christina)
+- Christina
 
-- When the user clicks on Contact Us:
-    - An interactive contact form appears (Christina)
+    - Vendors content
+    - About Us page
+    - Contact Us page
+    - Vendors page
+    - Markets page
+    - CSS
 
-- When the user clicks on Markets: 
-    - They will be prompted for a Zip code that leads to a list (Obtained from USDA API) of found local markets, alongside the locations of the markets in a map (map pending) (Cristian)
-    - When they click on said market, a list of frequent vendors will appear (To be integrated). (Cristian)
+- Cristian 
 
-- When the user clicks on Vendors:
-    - They are presented with a full list of vendors, and when clicked on, each vendor will open up with a bio (Crhistina)
-
+    - Home page
+    - Ajax calls using API's
+    - final stitching and touches
+    - Polishing of Readme file
+    
+     
 
 # LINKS:
 
-    - Website URL:
+- Website URL:
     https://cristianmontenegrop.github.io/07Project-Where-s-my-veggie.com/
 
-    - Git Hub Repository: 
+- Git Hub Repository: 
     https://github.com/cristianmontenegrop/07Project-Where-s-my-veggie.com
 
 
 
 # Project Highlights:
 
-    - A few highglighs from our project that entail the more complex parts of it.
-
-    - These images are provided in the Folder named Project-Highlights-Images.
+- A few highglighs from our project that entail the more complex parts of it.
+- These images are provided in the Folder named Project-Highlights-Images.
 
 
