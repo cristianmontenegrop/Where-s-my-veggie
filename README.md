@@ -1,75 +1,109 @@
-# 07Project-Where-s-my-veggie.com
 
-PROJECT TITLE: Where's my Veggie?
+# PROJECT TITLE: Where's my Veggie?
 
-PROJECT DESCRIPTION:
+# PROJECT DESCRIPTION:
 
--What are all of the area's farmers markets? 
--What do they sell?
--What is their bio?
--What is their contact info?
--When/where can I get their produce? Do they deliver? Where?
--How can I plan a pick up/delivery?
--Option to have selection of vendors you like saved to profile
+In a nutshell, this is a platform that connects produce vendors/producers with customers, simulating a phisical farmer's market.
+We accomplish this goal by helping the customer find the farmer's markets in her/his area, provide detailed information of those markets and the vendors that participate. To further guide them in the search of vendors we implement several maps (provided by google) across our site.
 
+# Concept forming querys
 
-USER STORY:
-
-*BUYER
-
-~GOALS~
--When I open up the app, I am presented with a list of growers/producers
--When I enter my current location, it will give me a list of local growers/producers OR when I click on a particular farmer's market near me, a list of growers/producers who will be there will show up
--When I click on a producer, I can see more information about them
-
-~BENEFITS~
--I am able to more easily connect with local producers
--I am able to more easily learn about local producers
--I am able to more easily locate local producers
+- What are all of the area's farmers markets? 
+- What do they sell?
+- What is their bio?
+- What is their contact info?
+- When/where can I get their produce? Do they deliver? Where?
+- How can I plan a pick up/delivery?
+- Option to have selection of vendors you like saved to profile
 
 
-*PRODUCER
+# USER STORY:
+
+BUYER
 
 ~GOALS~
--When I open the app, I can insert a bio about myself
--When I open the app, I can insert where and when I will be selling my produce
--When I open the app, I can update what kinds of seasonal produce I am selling
+
+- When I open up the app, I am presented with a list of growers/producers
+- When I enter my current location, it will give me a list of local growers/producers OR when I click on a particular farmer's market near me, a list of        growers/producers who will be there will show up
+- When I click on a producer, I can see more information about them
 
 ~BENEFITS~
--I am able to more easily sell my produce
--I am able to more easily connect with local buyers
+
+- I am able to more easily connect with local producers
+- I am able to more easily learn about local producers
+- I am able to more easily locate local producers
 
 
-APIs TO BE USED:
+PRODUCER
 
--Emails for users and vendors (vendors to update their information)
--Weather forecast for upcoming farmers markets!
--Google Maps
+~GOALS~
 
+- When I open the app, I can insert a bio about myself
+- When I open the app, I can insert where and when I will be selling my produce
+- When I open the app, I can update what kinds of seasonal produce I am selling
 
-ROUGH BREAKDOWN OF TASKS:
+~BENEFITS~
 
--When the user visits the webpage, they will be presented with a map with the local markets in the area
--The homepage will feature: 
-    -About Us (maps)
-    -Contact Us
-    -Markets (maps)
-    -Vendors (maps)
--When the user clicks on About Us:
-    -A brief story of the concept behind the webpage will be presented (Christina)
--When the user clicks on Contact Us:
-    -An interactive contact form appears
--When the user clicks on Markets:
-    -They will be presented with a list of local markets, alongside the locations of the markets in a map
-    -When they click on said market, a list of frequent vendors will appear
--When the user clicks on Vendors:
-    -They are presented with a full list of vendors, and when clicked on, each vendor will open up with a bio
+- I am able to more easily sell my produce
+- I am able to more easily connect with local buyers
 
 
-LINKS:
+# APIs TO BE USED:
 
-    Website URL:
+- Emails for users and vendors (vendors to update their information) (pending)
+- Weather forecast for upcoming farmers markets! (pending)
+- 2 x Google Maps
+- Location IQ to translate address into Coordinates.
+
+
+# Frameworks to be used
+
+- Google Fonts
+- Materialize CSS
+
+
+# ROUGH BREAKDOWN OF TASKS:
+
+
+- The homepage will feature: (Cristian)
+    - Pages listed in Nav-bar
+        - About Us
+        - Contact Us
+        - Markets 
+        - Vendors 
+        - Maps (Andrew)
+    - A map with the local markets in the Seattle area (Andrew)
+    - A brief description and instruction of the site's purpose
+    - Footer shared across all pages, featuring current sponsors, Support us and contact us sections, and links to subscribe as a follower in Instagram and other social media platforms
+
+- When the user clicks on About Us:
+    - A brief story of the concept behind the webpage will be presented (Christina)
+
+- When the user clicks on Contact Us:
+    - An interactive contact form appears (Christina)
+
+- When the user clicks on Markets: 
+    - They will be prompted for a Zip code that leads to a list (Obtained from USDA API) of found local markets, alongside the locations of the markets in a map (map pending) (Cristian)
+    - When they click on said market, a list of frequent vendors will appear (To be integrated). (Cristian)
+
+- When the user clicks on Vendors:
+    - They are presented with a full list of vendors, and when clicked on, each vendor will open up with a bio (Crhistina)
+
+
+# LINKS:
+
+    - Website URL:
     https://cristianmontenegrop.github.io/07Project-Where-s-my-veggie.com/
 
-    Git Hub Repository: 
+    - Git Hub Repository: 
     https://github.com/cristianmontenegrop/07Project-Where-s-my-veggie.com
+
+
+
+# Project Highlights:
+
+    - A few highglighs from our project that entail the more complex parts of it.
+
+    - These images are provided in the Folder named Project-Highlights-Images.
+
+
