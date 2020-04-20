@@ -48,14 +48,12 @@ We accomplish this goal by helping the customer find the farmer's markets in her
 
 BUYER
 
-~GOALS~
-
+GOALS
 - When I open up the app, I am presented with a list of growers/producers
 - When I enter my current location, it will give me a list of local growers/producers OR when I click on a particular farmer's market near me, a list of        growers/producers who will be there will show up
 - When I click on a producer, I can see more information about them
 
-~BENEFITS~
-
+BENEFITS
 - I am able to more easily connect with local producers
 - I am able to more easily learn about local producers
 - I am able to more easily locate local producers
@@ -63,14 +61,12 @@ BUYER
 
 PRODUCER
 
-~GOALS~
-
+GOALS
 - When I open the app, I can insert a bio about myself
 - When I open the app, I can insert where and when I will be selling my produce
 - When I open the app, I can update what kinds of seasonal produce I am selling
 
-~BENEFITS~
-
+BENEFITS
 - I am able to more easily sell my produce
 - I am able to more easily connect with local buyers
 
