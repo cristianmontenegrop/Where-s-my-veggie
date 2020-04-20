@@ -92,8 +92,8 @@ BENEFITS
     - Google maps Integration in
         - Home page
         - Maps page
-    - Google maps API
-    - Maps Page
+    - Google Maps Javascript API
+    - Google Maps Embed API
 
 - Christina
 
@@ -108,6 +108,7 @@ BENEFITS
 
     - Home page
     - Ajax calls using API's
+    - Implementing Ajax in the Markets page
     - final stitching and touches
     - Polishing of Readme file
     
