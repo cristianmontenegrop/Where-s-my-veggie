@@ -1,12 +1,30 @@
 
-# PROJECT TITLE: Where's my Veggie?
+## PROJECT TITLE: Where's my Veggie?
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/cristianmontenegrop/Where-s-my-veggie)
+[![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)](https://cristianmontenegrop.github.io/Where-s-my-veggie/)
 
-# PROJECT DESCRIPTION:
+## Table of Contents 
+
+* [Demonstration](#Demonstration)
+* [Description](#Description)
+* [Project Mapping](#Project%20Mapping)
+* [Concept forming querys](#Concept%20forming%20querys)
+* [User Story](#User%20Story)
+* [APIs to be used](#APIs%20to%20be%20used)
+* [Frameworks to be used](#Frameworks%20to%20be%20used)
+* [Rough breakdown of Tasks](#Rough%20breakdown%20of%20Tasks)
+* [Links](#Links)
+* [Project Highlights](#Project%20Highlights)
+
+
+## Demonstration
+[![Foo](assets/wheres-my-veggie.gif)](https://cristianmontenegrop.github.io/Where-s-my-veggie/) 
+## DESCRIPTION:
 
 In a nutshell, this is a platform that connects produce vendors/producers with customers, simulating a phisical farmer's market.
 We accomplish this goal by helping the customer find the farmer's markets in her/his area, provide detailed information of those markets and the vendors that participate. To further guide them in the search of vendors we implement several maps (provided by google) across our site.
 
-# Project Mapping
+## Project Mapping
 
 - The homepage will feature:
     - Pages listed in Nav-bar
@@ -33,7 +51,7 @@ We accomplish this goal by helping the customer find the farmer's markets in her
     - They are presented with a full list of vendors, and when clicked on, each vendor will open up with a bio
 
 
-# Concept forming querys
+## Concept forming querys
 
 - What are all of the area's farmers markets? 
 - What do they sell?
@@ -44,7 +62,7 @@ We accomplish this goal by helping the customer find the farmer's markets in her
 - Option to have selection of vendors you like saved to profile
 
 
-# USER STORY:
+## User Story
 
 BUYER
 
@@ -71,7 +89,7 @@ BENEFITS
 - I am able to more easily connect with local buyers
 
 
-# APIs TO BE USED:
+## APIs to be used
 
 - Emails for users and vendors (vendors to update their information) (pending)
 - Weather forecast for upcoming farmers markets! (pending)
@@ -79,13 +97,13 @@ BENEFITS
 - Location IQ to translate address into Coordinates.
 
 
-# Frameworks to be used
+## Frameworks to be used
 
 - Google Fonts
 - Materialize CSS
 
 
-# ROUGH BREAKDOWN OF TASKS:
+## Rough breakdown of Tasks
 
 - Andrew
 
@@ -107,27 +125,27 @@ BENEFITS
 - Cristian 
 
     - Home page
-    - Ajax calls using API's
+    - API calls using Ajax
     - Implementing Ajax in the Markets page
     - final stitching and touches
     - Polishing of Readme file
     
      
 
-# LINKS:
+## Links
 
 - Presentation power point: 
     https://drive.google.com/file/d/1XKaKgeCLr5rFKuEyNMvh1cVD5w4I0mIC/view?usp=sharing
 
 - Website URL:
-    https://cristianmontenegrop.github.io/07Project-Where-s-my-veggie.com/
+    https://cristianmontenegrop.github.io/Where-s-my-veggie/
 
 - Git Hub Repository: 
-    https://github.com/cristianmontenegrop/07Project-Where-s-my-veggie.com
+    https://github.com/cristianmontenegrop/Where-s-my-veggie
 
 
 
-# Project Highlights:
+## Project Highlights
 
 - A few highglighs from our project that entail the more complex parts of it.
 - These images are provided in the Folder named Project-Highlights-Images.
